@@ -38,7 +38,4 @@
 (global-set-key (kbd "M-l") 'evil-window-right)
 
 
-;; magit
-(global-set-key [f1] 'magit-status)
-
 (provide 'my-keymaps)

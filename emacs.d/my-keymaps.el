@@ -24,18 +24,18 @@
 
 (evil-ex-define-cmd "rake" 'rinari-rake)
 
-(evil-declare-key 'insert ruby-mode-map
-                  (kbd "M-f") 'insert-fatarrow)
 ;; buffer nav
 (global-set-key (kbd "C-l") 'next-buffer)
 (global-set-key (kbd "C-h") 'previous-buffer)
-
 
 ;; window nav
 (global-set-key (kbd "M-h") 'evil-window-left)
 (global-set-key (kbd "M-j") 'evil-window-down)
 (global-set-key (kbd "M-k") 'evil-window-up)
 (global-set-key (kbd "M-l") 'evil-window-right)
+
+(evil-ex-define-cmd "esh" 'switch-to-eshell)
+                                
 
 
 (provide 'my-keymaps)

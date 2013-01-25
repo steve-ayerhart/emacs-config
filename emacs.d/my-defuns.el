@@ -20,4 +20,11 @@
   (interactive)
   (insert " => "))
 
+(defun switch-to-eshell ()
+  (let ((esh (get-buffer "*eshell*")))
+    (if esh
+        (switch-to-buffer-here esh)
+      eshell)))
+
+
 (provide 'my-defuns)

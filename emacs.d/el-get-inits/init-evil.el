@@ -1,3 +1,4 @@
 (evil-mode 1)
 
-(mapcar 'require '(my-defuns my-keymaps))
+(require 'my-defuns)
+(require 'my-keymaps)

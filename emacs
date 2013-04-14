@@ -1,76 +1,35 @@
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path user-emacs-directory)
 
-(mapcar 'require
-        '(cl
-          uniquify))
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(require 'package)
+(package-refresh-contents)
+(package-initialize)
 
-(unless (require 'el-get nil t)
-  (url-retrieve
-   "https://raw.github.com/dimitri/el-get/master/el-get-install.el"
-   (lambda (s)
-     (goto-char (point-max))
-     (eval-print-last-sexp))))
+(add-hook 'after-init-hook '(lambda () (load "~/.emacs.d/inits.el")))
 
-
+(mapc 'require
+      '(cl my-defuns my-keymaps uniquify))
 
 
-; aquamacs specific
-(when (boundp 'aquamacs-version)
-  (setq
-   special-display-regexp nil
-   aquamacs-scratch-file nil)
+(tool-bar-mode -1)
+(setq visible-bell 1)
 
-  (tool-bar-mode 0)
-  (tabbar-mode -1)
-  (one-buffer-one-frame-mode 0))
-
-
-;(global-linum-mode 1)
+(global-linum-mode 1)
 (scroll-bar-mode -1)
 (show-paren-mode 1)
-;(turn-on-font-lock)
+(turn-on-font-lock)
+
+                                        ; always fullscreen
+(set-frame-parameter nil 'fullscreen 'fullboth)
+(set-frame-parameter (selected-frame) 'alpha '(95 95))
+(add-to-list 'default-frame-alist '(alpha 95 95))
 
 (setq
- el-get-sources '(el-get
-                  ; snippets
-;                  yasnippet
-
-
-                  ; git love
-;                  magit
-
-                  ;fancier dired mode
-                  dired+
-
-                  ; color themes
-                  color-theme
-                  color-theme-zen-and-art
-
-                  ; i can't live without my modal editing
-                  evil
-
-                  ; ruby / rails stuff
-                  inf-ruby rhtml-mode rails-el rinari rvm
-
-                  coffee-mode
-                  go-mode
-                  yaml-mode
-                  sass-mode
-                  haml-mode)
-
- el-get-user-package-directory "~/.emacs.d/el-get-inits")
-
-(el-get 'sync el-get-sources)
-
-(setq
- ;; enable backups
- backup-directory-alist '(("." . "/var/tmp/emacs"))
- backup-by-copying t
- delete-old-versions t
- kept-new-versions 6
- kept-old-versions t
- version-control t
+ ;; backups
+ backup-directory-alist `((".*" . ,temporary-file-directory))
+ auto-save-file-name-transforms `((".*" ,temporary-file-directory))
 
  ;; uniquify
  uniquify-buffer-name-style 'post-forward
@@ -90,22 +49,29 @@
  ;; ediff should use the selected frame
 
  ediff-window-setup-function 'ediff-setup-windows-plain
- ediff-split-window-function (if (> (frame-width) 150)
-                                 'split-window-horizontally
-                               'split-window-vertically)
 
- ;; copy/paste 
- interprogram-cut-function 'past-to-osx
+ ;; copy/paste
+ interprogram-cut-function 'paste-to-osx
  interprogram-paste-function 'copy-from-osx)
 
-; truncate long buffers
+                                        ; truncate long buffers
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)
 
-; tabs
+                                        ; tabs
 (setq-default
  indent-tabs-mode nil
  tab-width 4)
 
+(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
 
-;; get the correct path 
-(setenv "PATH" (shell-command-to-string "/bin/bash -l -c 'echo -n $PATH'"))
+(custom-set-faces
+ '(default ((t (:height 140 :width normal :family "Inconsolata")))))
+
+(add-to-list 'auto-mode-alist '("emacs" . lisp-interaction-mode))
+
+(put 'dired-find-alternate-file 'disabled nil)
+
+(fset 'eshell-visor-on
+      "\C-x1\M-xeshell\n")
+(fset 'eshell-visor-off
+      "\C-xo\M-xbury-buffer\n")

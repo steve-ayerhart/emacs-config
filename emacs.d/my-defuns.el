@@ -10,21 +10,17 @@
 (defun copy-from-osx ()
   (shell-command-to-string "pbpaste"))
 
-(defun past-to-osx (text &optional push)
+(defun paste-to-osx (text &optional push)
   (let ((process-connection-type nil))
     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(defun insert-fatarrow ()
+(defun toggle-eshell ()
   (interactive)
-  (insert " => "))
-
-(defun switch-to-eshell ()
-  (let ((esh (get-buffer "*eshell*")))
-    (if esh
-        (switch-to-buffer-here esh)
-      eshell)))
-
-
+  (execute-kbd-macro
+   (symbol-function (if (string= "eshell-mode" (eval 'major-mode))
+                        'eshell-visor-off
+                      'eshell-visor-on))))
+                         
 (provide 'my-defuns)

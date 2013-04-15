@@ -1,10 +1,12 @@
-(setq packages '(evil))
+(setq packages '(evil
+                 color-theme
+                 zen-and-art-theme
+                 magit))
 
-(mapc (lambda (pkg)
-        (let ((init-file (concat "~/.emacs.d/inits/" (symbol-name pkg) ".el")))
-          (if (not (require pkg nil t))
-              (package-install (car mode))
-            (if (file-exists-p init-file)
-                (eval-after-load (symbol-name pkg) init-file)
-              (format "Coult not init %s" init-file)))))
-      packages)
+(dolist (pkg packages)
+  (let ((init-file (concat "~/.emacs.d/inits/" (symbol-name pkg) ".el")))
+    (when (not (require pkg nil t))
+      (package-install pkg))
+    (if (file-exists-p init-file)
+        (load init-file)
+      (format "Coult not init %s" init-file))))

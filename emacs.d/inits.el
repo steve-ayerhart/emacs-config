@@ -3,6 +3,14 @@
                  quack geiser paredit
                  zen-and-art-theme
                  shell-switcher
+                 js-comint
+                 js2-mode
+                 flymake
+                 flymake-cursor
+                 flymake-jslint
+                 flymake-php
+                 flymake-json
+                 php-extras
                  magit))
 
 (dolist (pkg packages)

@@ -51,8 +51,9 @@
  ediff-window-setup-function 'ediff-setup-windows-plain
 
  ;; copy/paste
- interprogram-cut-function 'paste-to-osx
- interprogram-paste-function 'copy-from-osx)
+; interprogram-cut-function 'paste-to-osx
+; interprogram-paste-function 'copy-from-osx
+ )
 
                                         ; truncate long buffers
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)
@@ -65,7 +66,11 @@
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
 
 (custom-set-faces
- '(default ((t (:height 140 :width normal :family "Inconsolata")))))
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 (add-to-list 'auto-mode-alist '("emacs" . lisp-interaction-mode))
 

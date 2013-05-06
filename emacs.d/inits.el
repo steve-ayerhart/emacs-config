@@ -1,6 +1,8 @@
 (setq packages '(evil
                  color-theme
+                 quack geiser paredit
                  zen-and-art-theme
+                 shell-switcher
                  magit))
 
 (dolist (pkg packages)

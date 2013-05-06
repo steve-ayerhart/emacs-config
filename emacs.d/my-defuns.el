@@ -16,11 +16,5 @@
       (process-send-string proc text)
       (process-send-eof proc))))
 
-(defun toggle-eshell ()
-  (interactive)
-  (execute-kbd-macro
-   (symbol-function (if (string= "eshell-mode" (eval 'major-mode))
-                        'eshell-visor-off
-                      'eshell-visor-on))))
                          
 (provide 'my-defuns)

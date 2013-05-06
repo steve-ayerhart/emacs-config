@@ -70,8 +70,3 @@
 (add-to-list 'auto-mode-alist '("emacs" . lisp-interaction-mode))
 
 (put 'dired-find-alternate-file 'disabled nil)
-
-(fset 'eshell-visor-on
-      "\C-x1\M-xeshell\n")
-(fset 'eshell-visor-off
-      "\C-xo\M-xbury-buffer\n")

@@ -23,4 +23,10 @@
                         'eshell-visor-off
                       'eshell-visor-on))))
                          
+(defun eshell/clear ()
+  "clear the eshell buffer"
+  (interactive)
+  (let ((inhibit-read-only t))
+    (erase-buffer)))
+
 (provide 'my-defuns)

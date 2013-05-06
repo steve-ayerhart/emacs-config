@@ -1,6 +1,15 @@
 (setq packages '(evil
+                 paredit
                  color-theme
                  zen-and-art-theme
+                 js-comint
+                 js2-mode
+                 flymake
+                 flymake-cursor
+                 flymake-jslint
+                 flymake-php
+                 flymake-json
+                 php-extras
                  magit))
 
 (dolist (pkg packages)

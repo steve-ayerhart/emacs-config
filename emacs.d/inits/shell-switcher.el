@@ -1,1 +1,1 @@
-(setq shell-switcher-mode t)
+(shell-switcher-mode)

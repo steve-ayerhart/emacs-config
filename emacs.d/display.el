@@ -2,40 +2,22 @@
  '(default ((t (:family "Inconsolata" :foundry "nil" :slant normal :weight normal :height 140 :width normal)))))
 
 (setq inhibit-startup-message t)
-;(setq emacs-query-startup t)
-;(setq emacs-base-display t)
 
-(if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(when (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
+(when (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; Tell Emacs to always syntax-hightlight everything to its fullest extent, and don't wait
-;; to fontify (do it immediately).
 
-(global-font-lock-mode t)
-(setq font-lock-maximum-decoration t)
-(setq font-lock-maximum-size nil)
-(setq font-lock-support-mode 'jit-lock-mode)
-(setq jit-lock-stealth-time 0)
-
-(when window-system ;; Graphics mode
+(when window-system 
   (setq default-frame-alist '((cursor-type . (bar . 3))))
-  (set-face-attribute 'default nil :height 150)
 
-  (let ((frame (selected-frame)))
-    (set-frame-position frame 0 0)
-    (set-frame-size frame 150 40))
-
+  (global-font-lock-mode t)
+  (global-linum-mode 1)
   (blink-cursor-mode 0)
-  (when (fboundp 'global-hl-line-mode)
-    (global-hl-line-mode t))
+  (when (fboundp 'global-hl-line-mode) (global-hl-line-mode t))
 
   (setq default-indicate-empty-lines t)
-  (setq indicate-empty-lines t)
-
-  ;; If you're using OSX emacs-app, this makes 'open -a Emacs file.txt' re-use
-  ;; an existing frame.
-  (setq ns-pop-up-frames nil))
+  (setq indicate-empty-lines t))
 
 ; always fullscreen
 (set-frame-parameter nil 'fullscreen 'fullboth)
@@ -53,25 +35,6 @@
 (defun my-linum-format (line-number)
   (propertize (format my-linum-format-string line-number) 'face 'linum))
 
-(global-linum-mode 1)
-
-;; Some good settings: show line and column #, show hilighting when selecting a
-;; region, raise the cut buffer size from 20 KiB to 64KB, always add a final
-;; newline if there isn't one, don't auto-create newlines when you go past the
-;; end of the file, change the yes-or-no prompt to a simple single ``y'' or
-;; ``n'' across the board.
-
-(setq resize-mini-windows     t
-      size-indication-mode    t
-      transient-mark-mode     t)
-
-(setq-default even-window-heights nil)
-(setq-default resize-mini-windows nil)
-
-;; Handle escape sequences when shelling out (C-z)
-(when (require 'ansi-color nil 'noerror)
-  (ansi-color-for-comint-mode-on)
-  (setq comint-prompt-read-only t))
 
 ;; Mark certain keywords with warning faces
 (defun enable-warning-keyword-hiliting (modes)
@@ -81,8 +44,6 @@
                             '(("\\<\\(FIXME\\|WARNING\\|NOTE\\|TODO\\|TBC\\|TBD\\)[: ]" 1
                                font-lock-warning-face t))
                             )))
-
-(enable-warning-keyword-hiliting '(c-mode c++-mode perl-mode ruby-mode))
 
 ;; Replace that horrible emacs 23.x visible-bell square with a mode-line-based
 ;; one instead.  Thanks, Miles.

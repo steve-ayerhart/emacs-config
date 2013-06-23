@@ -5,18 +5,14 @@
 ;(setq emacs-query-startup t)
 ;(setq emacs-base-display t)
 
-(if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; Tell Emacs to always syntax-hightlight everything to its fullest extent, and don't wait
 ;; to fontify (do it immediately).
 
 (global-font-lock-mode t)
-(setq font-lock-maximum-decoration t)
-(setq font-lock-maximum-size nil)
-(setq font-lock-support-mode 'jit-lock-mode)
-(setq jit-lock-stealth-time 0)
 
 (when window-system ;; Graphics mode
   (setq default-frame-alist '((cursor-type . (bar . 3))))

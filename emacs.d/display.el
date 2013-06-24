@@ -3,15 +3,22 @@
 
 (setq inhibit-startup-message t)
 
-(when (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
-(when (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
+(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 
-(when window-system 
-  (setq default-frame-alist '((cursor-type . (bar . 3))))
+
+(when window-system ;; Graphics mode
 
   (global-font-lock-mode t)
+  (setq default-frame-alist '((cursor-type . (bar . 3))))
+
+            ; always fullscreen
+  (set-frame-parameter nil 'fullscreen 'fullboth)
+  (set-frame-parameter (selected-frame) 'alpha '(95 70))
+  (add-to-list 'default-frame-alist '(alpha 95 70))
+
   (global-linum-mode 1)
   (blink-cursor-mode 0)
   (when (fboundp 'global-hl-line-mode) (global-hl-line-mode t))
@@ -19,10 +26,6 @@
   (setq default-indicate-empty-lines t)
   (setq indicate-empty-lines t))
 
-; always fullscreen
-(set-frame-parameter nil 'fullscreen 'fullboth)
-(set-frame-parameter (selected-frame) 'alpha '(95 70))
-(add-to-list 'default-frame-alist '(alpha 95 70))
 
 (defvar my-linum-format-string "%4d")
 (add-hook 'linum-before-numbering-hook 'my-linum-get-format-string)

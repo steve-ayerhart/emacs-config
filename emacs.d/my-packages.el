@@ -6,9 +6,11 @@
 (package-initialize)
 
 (defvar my-packages '(evil
+                      auto-complete
+                      buffer-stack
                       color-theme
                       css-mode
-                      quack geiser 
+                      quack geiser
                       zen-and-art-theme
                       shell-switcher
                       js-comint
@@ -21,7 +23,6 @@
                       flymake-php
                       flymake-jslint
                       flymake-json
-                      icicles
                       magit)
   "A list of packages to make sure are installed when loaded.")
 

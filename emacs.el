@@ -1,15 +1,24 @@
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path "~/.emacs.d")
 
+;; start emacs daemon
+(load "server")
+(unless (server-running-p)
+  (server-start))
+
+(mapc 'require
+      '(cl my-defuns my-keymaps uniquify display))
+
+;; let's get and configure all my packages
 (require 'my-packages)
 (load-my-packages)
-(load "display.el")
-(mapc 'require
-      '(cl my-defuns my-keymaps uniquify))
 
+;;; some general customizations
 (setq
  ;; backups
  backup-directory-alist `((".*" . ,temporary-file-directory))
  auto-save-file-name-transforms `((".*" ,temporary-file-directory))
+ 
+ ns-pop-up-frams nil
 
  ;; uniquify
  uniquify-buffer-name-style 'post-forward
@@ -29,19 +38,31 @@
 
  ;; ediff should use the selected frame
  ediff-window-setup-function 'ediff-setup-windows-plain
- ediff-split-window-function 'split-window-horizontally
+ ediff-split-window-function 'split-window-horizontally)
 
- ;; copy/paste
-; interprogram-cut-function 'paste-to-osx
-; interprogram-paste-function 'copy-from-osx
- )
-
-                                        ; truncate long buffers
+; truncate long buffers
 (add-hook 'comint-output-filter-functions 'comint-truncate-buffer)
 
-                                        ; tabs
+; tabs
 (setq-default
  indent-tabs-mode nil
  tab-width 4)
 
+(show-paren-mode t)
+(fset 'yes-or-no-p 'y-or-n-p)
+
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values (quote ((virtualenv-default-directory . "/Users/erhart/Code/brp/projects/brp") (virtualenv-workon . "brp")))))
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((perl . t)         
+   (ruby . t)
+   (sh . t)
+   (python . t)
+   (emacs-lisp . t)))

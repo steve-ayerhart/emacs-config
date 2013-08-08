@@ -6,6 +6,8 @@
 (package-initialize)
 
 (defvar my-packages '(evil
+                      paredit
+                      evil-leader 
                       auto-complete
                       buffer-stack
                       color-theme
@@ -16,13 +18,8 @@
                       js-comint
                       js2-mode
                       php-mode
-                      flymake
                       apache-mode
-                      flymake-easy
-                      flymake-cursor
-                      flymake-php
-                      flymake-jslint
-                      flymake-json
+                      flymake flymake-easy flymake-cursor flymake-php flymake-jslint flymake-json
                       magit)
   "A list of packages to make sure are installed when loaded.")
 

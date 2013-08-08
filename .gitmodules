@@ -1,0 +1,6 @@
+[submodule "emacs.d/evil-rebellion"]
+	path = emacs.d/evil-rebellion
+	url = git@github.com:emacsmirror/evil-rebellion.git
+[submodule "emacs.d/evil-scout"]
+	path = emacs.d/evil-scout
+	url = git@github.com:emacsmirror/evil-scout.git

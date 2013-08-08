@@ -7,8 +7,6 @@
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-
-
 (when window-system ;; Graphics mode
 
   (global-font-lock-mode t)
@@ -54,6 +52,7 @@
 (defcustom mode-line-bell-string "♪♪♪♪♪♪♪♪♪"
   "Message displayed in mode-line by `mode-line-bell' function."
   :group 'user)
+
 (defcustom mode-line-bell-delay 0.1
   "Number of seconds `mode-line-bell' displays its message."
   :group 'user)
@@ -75,14 +74,18 @@ This function is intended to be used as a value of `ring-bell-function'."
           (propertize
            (concat
             (propertize
-             " "
+             "x"
              'display
-             `(space :align-to (- right ,(string-width mode-line-bell-string))))
+             `(space :align-to (- right 2 ,(string-width mode-line-bell-string))))
             mode-line-bell-string)
+           'face '(:foreground "red")
            ))
     (setq mode-line-bell-cached-string mode-line-bell-string))
   (message mode-line-bell-propertized-string)
   (sit-for mode-line-bell-delay)
-  (message ""))
+  (message "")
+  )
 
 (setq ring-bell-function 'mode-line-bell)
+
+(provide 'display)

@@ -74,7 +74,7 @@ This function is intended to be used as a value of `ring-bell-function'."
           (propertize
            (concat
             (propertize
-             "x"
+             ""
              'display
              `(space :align-to (- right 2 ,(string-width mode-line-bell-string))))
             mode-line-bell-string)

@@ -15,8 +15,8 @@
                       quack geiser
                       zen-and-art-theme
                       shell-switcher
-                      js-comint
-                      js2-mode
+                      gist
+                      js-comint js2-mode
                       php-mode
                       apache-mode
                       flymake flymake-easy flymake-cursor flymake-php flymake-jslint flymake-json

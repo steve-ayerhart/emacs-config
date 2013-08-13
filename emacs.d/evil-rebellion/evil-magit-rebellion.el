@@ -130,6 +130,7 @@
     (define-key map (kbd "T") 'magit-change-what-branch-tracks)
     map))
 
+(evil-set-initial-state 'magit-status-mode 'normal)
 (evil-set-initial-state 'magit-mode 'normal)
 (evil-set-initial-state 'magit-commit-mode 'normal)
 (evil-set-initial-state 'magit-log-edit-mode 'insert)

@@ -18,7 +18,7 @@
  backup-directory-alist `((".*" . ,temporary-file-directory))
  auto-save-file-name-transforms `((".*" ,temporary-file-directory))
  
- ns-pop-up-frams nil
+ ns-pop-up-frames nil
 
  ;; uniquify
  uniquify-buffer-name-style 'post-forward
@@ -52,12 +52,6 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((virtualenv-default-directory . "/Users/erhart/Code/brp/projects/brp") (virtualenv-workon . "brp")))))
 
 (org-babel-do-load-languages
  'org-babel-load-languages

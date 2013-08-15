@@ -15,6 +15,9 @@
                       quack geiser
                       zen-and-art-theme
                       shell-switcher
+                      circe
+                      jabber
+                      erc-hl-nicks
                       gist
                       js-comint js2-mode
                       php-mode

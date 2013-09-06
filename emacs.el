@@ -36,6 +36,23 @@
 
  comint-buffer-maximum-size 10240
 
+ ; ibuffer
+ ibuffer-never-show-predicates '("\\*Completions\\*"
+                                 "\\*Tramp*"
+                                 "\\*Compile-log*"
+                                 "\\*Packages\\*")
+ ibuffer-saved-filter-groups '(("default"
+                                ("magit" (name . "^\\*magit:"))
+                                ("eshell" (name . "^\\*eshell"))
+                                ("elisp" (mode . emacs-lisp-mode))
+                                ("php" (mode . php-mode))
+                                ("irc" (or
+                                        (mode . circe-channel-mode)
+                                        (mode . circe-server-mode)))
+                                ("emacs" (or
+                                          (name . "^\\*scratch\\*$")
+                                          (name . "^\\*Messages\\*$")))))
+
  ;; ediff should use the selected frame
  ediff-window-setup-function 'ediff-setup-windows-plain
  ediff-split-window-function 'split-window-horizontally)
@@ -60,3 +77,9 @@
    (sh . t)
    (python . t)
    (emacs-lisp . t)))
+
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+(autoload 'ibuffer "ibuffer" "List buffers." t)
+(add-hook 'ibuffer-mode-hook
+              (lambda ()
+                (ibuffer-switch-to-saved-filter-groups "default")))

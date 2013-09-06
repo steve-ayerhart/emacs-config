@@ -63,6 +63,7 @@
 ; tabs
 (setq-default
  indent-tabs-mode nil
+ truncate-lines t
  tab-width 4)
 
 (show-paren-mode t)

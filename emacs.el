@@ -45,6 +45,7 @@
                                 ("magit" (name . "^\\*magit:"))
                                 ("eshell" (name . "^\\*eshell"))
                                 ("elisp" (mode . emacs-lisp-mode))
+                                ("js" (mode . javascript-mode))
                                 ("php" (mode . php-mode))
                                 ("irc" (or
                                         (mode . circe-channel-mode)

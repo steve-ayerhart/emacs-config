@@ -1,5 +1,6 @@
 (customize-set-variable 'buffer-stack-untracked (quote ("KILL" 
                                                         "*Compile-Log*" "*Compile-Log-Show*"
+                                                        "*Warnings*" "*Help*"
                                                         "*Group*" 
                                                         "*Completions*" 
                                                         "*Messages*" 

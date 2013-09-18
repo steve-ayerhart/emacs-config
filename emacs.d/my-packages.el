@@ -7,7 +7,8 @@
 
 (defvar my-packages '(evil
                       paredit
-                      evil-leader 
+                      evil-leader
+                      elscreen
                       auto-complete
                       buffer-stack
                       color-theme
@@ -15,8 +16,8 @@
                       quack geiser
                       zen-and-art-theme
                       shell-switcher
-                      circe
-                      jabber
+                      ;circe
+                      ;jabber
                       erc-hl-nicks
                       gist
                       js-comint js2-mode

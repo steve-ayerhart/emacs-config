@@ -10,6 +10,8 @@
                                :user "steve"
                                :pass ,bbb-password ; set in ~/.private.el
                                ))
+      circe-default-quit-message "Leaving"
+      circe-default-part-message "Leaving"
       lui-flyspell-p t
       lui-max-buffer-size 30000
       lui-flyspell-alist '((".*" "american")))

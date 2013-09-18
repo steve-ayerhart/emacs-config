@@ -4,7 +4,10 @@
   (load-file "~/.private.el"))
 
 (setq
- jabber-account-list `(("steveerhart@bonerbonerboner.com/emacs" (:port . 5222) (:password . jabber-password) (:connection-type . starttls)))
+ jabber-account-list `(("steveerhart@bonerbonerboner.com/emacs" 
+                        (:port . 5222) 
+                        (:password . jabber-password)
+                        (:connection-type . starttls)))
  jabber-roster-line-format "%a %n"
  jabber-roster-show-title nil
  jabber-auto-reconnect t

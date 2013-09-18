@@ -20,7 +20,7 @@
                       erc-hl-nicks
                       gist
                       js-comint js2-mode
-                      php-mode
+                      php+-mode
                       apache-mode
                       flymake flymake-easy flymake-cursor flymake-php flymake-jslint flymake-json
                       magit)

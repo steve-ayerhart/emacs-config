@@ -1,4 +1,6 @@
 (evil-mode 1)
+(require 'surround)
+(global-surround-mode 1)
 
 ; helper function
 (defun set-default-mode-to-normal (mode)

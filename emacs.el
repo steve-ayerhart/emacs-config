@@ -41,12 +41,16 @@
                                  "\\*Tramp*"
                                  "\\*Compile-log*"
                                  "\\*Packages\\*")
+
  ibuffer-saved-filter-groups '(("default"
-                                ("magit" (name . "^\\*magit:"))
-                                ("eshell" (name . "^\\*eshell"))
-                                ("elisp" (mode . emacs-lisp-mode))
-                                ("js" (mode . javascript-mode))
+                                ("rb" (mode . ruby-mode))
+                                ("js" (or
+                                       (mode . js2-mode)
+                                       (mode . javascript-mode)))
                                 ("php" (mode . php-mode))
+                                ("elisp" (mode . emacs-lisp-mode))
+                                ("eshell" (name . "^\\*eshell"))
+                                ("magit" (name . "^\\*magit"))
                                 ("irc" (or
                                         (mode . circe-channel-mode)
                                         (mode . circe-server-mode)))

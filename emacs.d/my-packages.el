@@ -16,9 +16,11 @@
                       quack geiser
                       zen-and-art-theme
                       shell-switcher
+                      ruby-mode rinari ruby-block ruby-end inf-ruby
+                      haml-mode
                       ;circe
                       ;jabber
-                      erc-hl-nicks
+                      ;erc-hl-nicks
                       gist
                       js-comint js2-mode
                       php+-mode

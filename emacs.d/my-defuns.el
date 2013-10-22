@@ -1,3 +1,5 @@
+;;; some generic-ish functions
+
 ;; indent whole bufer
 (defun iwb()
   "indent whole buffer"
@@ -6,23 +8,15 @@
   (indent-region (point-min) (point-max) nil)
   (untabify (point-min) (point-max)))
 
-;; setup clipboards
-(defun copy-from-osx ()
-  (shell-command-to-string "pbpaste"))
-
-(defun paste-to-osx (text &optional push)
-  (let ((process-connection-type nil))
-    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-      (process-send-string proc text)
-      (process-send-eof proc))))
-
-                         
+;; clear eshell buffer
 (defun eshell/clear ()
   "clear the eshell buffer"
   (interactive)
   (let ((inhibit-read-only t))
     (erase-buffer)))
 
+
+;; misc functions for quiting killing the minibuffer with esc
 (defun def-assoc (key alist default)
   "Return cdr of `KEY' in `ALIST' or `DEFAULT' if key is no car in alist."
   (let ((match (assoc key alist)))

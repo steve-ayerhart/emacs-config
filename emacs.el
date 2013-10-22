@@ -23,7 +23,7 @@
  my-packages '(evil
                magit
                evil-surround evil-leader evil-numbers
-               color-theme color-theme-zen-and-art
+               zenburn-theme
                php-mode-improved php-completion
                shell-switcher
                Enhanced-Ruby-Mode inf-ruby ruby-block ruby-end rinari
@@ -32,7 +32,7 @@
                js2-mode js-comint
                apache-mode nginx-mode
                geiser
-               haml-mode markdown-mode
+               yaml-mode haml-mode markdown-mode
                scss-mode css-mode)
  ;; backups
  backup-directory-alist `((".*" . ,temporary-file-directory))
@@ -80,3 +80,19 @@
    (sh . t)
    (python . t)
    (emacs-lisp . t)))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector ["#000000" "#d54e53" "#afd75f" "#e7c547" "#5f87d7" "#af87d7" "#5f87d7" "#dadada"])
+ '(buffer-stack-untracked (quote ("KILL" "*Compile-Log*" "*Compile-Log-Show*" "*Warnings*" "*Help*" "*Group*" "*Completions*" "*Messages*" "*Packages*" "*magit-process*" "*magit-commit*" "*magit-edit-log" "*Ediff Registry*")))
+ '(custom-safe-themes (quote ("159bb8f86836ea30261ece64ac695dc490e871d57107016c09f286146f0dae64" "4aafea32abe07a9658d20aadcae066e9c7a53f8e3dfbd18d8fa0b26c24f9082c" "d6a00ef5e53adf9b6fe417d2b4404895f26210c52bb8716971be106550cea257" default)))
+ '(fci-rule-character-color "#1c1c1c")
+ '(fci-rule-color "#1c1c1c"))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Inconsolata" :foundry "nil" :slant normal :weight normal :height 140 :width normal)))))

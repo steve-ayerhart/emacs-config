@@ -19,9 +19,6 @@
                                 ("elisp" (mode . emacs-lisp-mode))
                                 ("eshell" (name . "^\\*eshell"))
                                 ("magit" (name . "^\\*magit"))
-                                ("irc" (or
-                                        (mode . circe-channel-mode)
-                                        (mode . circe-server-mode)))
                                 ("emacs" (or
                                           (name . "^\\*scratch\\*$")
                                           (name . "^\\*Messages\\*$"))))))

@@ -1,1 +1,0 @@
-(shell-switcher-mode)

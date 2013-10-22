@@ -52,28 +52,6 @@
 
  comint-buffer-maximum-size 10240
 
- ; ibuffer
- ibuffer-never-show-predicates '("\\*Completions\\*"
-                                 "\\*Tramp*"
-                                 "\\*Compile-log*"
-                                 "\\*Packages\\*")
-
- ibuffer-saved-filter-groups '(("default"
-                                ("rb" (mode . ruby-mode))
-                                ("js" (or
-                                       (mode . js2-mode)
-                                       (mode . javascript-mode)))
-                                ("php" (mode . php-mode))
-                                ("elisp" (mode . emacs-lisp-mode))
-                                ("eshell" (name . "^\\*eshell"))
-                                ("magit" (name . "^\\*magit"))
-                                ("irc" (or
-                                        (mode . circe-channel-mode)
-                                        (mode . circe-server-mode)))
-                                ("emacs" (or
-                                          (name . "^\\*scratch\\*$")
-                                          (name . "^\\*Messages\\*$")))))
-
  ;; ediff should use the selected frame
  ediff-window-setup-function 'ediff-setup-windows-plain
  ediff-split-window-function 'split-window-horizontally
@@ -82,14 +60,11 @@
 
 (el-get 'sync my-packages)
 
-<<<<<<< HEAD
-=======
 ; tabs
 (setq-default
  indent-tabs-mode nil
  truncate-lines t
  tab-width 4)
->>>>>>> 707448c91401fe81dc99332e7b2108f72d31a82e
 
 (show-paren-mode 1)
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -103,9 +78,3 @@
    (sh . t)
    (python . t)
    (emacs-lisp . t)))
-
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
-(add-hook 'ibuffer-mode-hook
-              (lambda ()
-                (ibuffer-switch-to-saved-filter-groups "default")))

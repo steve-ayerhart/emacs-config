@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+(package-initialize)
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -12,12 +13,15 @@
 (mapc 'require
       '(cl my-defuns uniquify display))
 
+(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
+
 (setq
  ;; el-get variables
  el-get-verbose t
  el-get-user-package-directory "~/.emacs.d/inits"
 
  my-packages '(evil
+               magit
                evil-surround evil-leader evil-numbers
                color-theme color-theme-zen-and-art
                php-mode-improved php-completion
@@ -27,8 +31,8 @@
                ibuffer-vc
                js2-mode js-comint
                apache-mode nginx-mode
-	       geiser
-	       haml-mode markdown-mode
+               geiser
+               haml-mode markdown-mode
                scss-mode css-mode)
  ;; backups
  backup-directory-alist `((".*" . ,temporary-file-directory))
@@ -54,13 +58,11 @@
 
  ;; ediff should use the selected frame
  ediff-window-setup-function 'ediff-setup-windows-plain
- ediff-split-window-function 'split-window-horizontally
-
- )
+ ediff-split-window-function 'split-window-horizontally)
 
 (el-get 'sync my-packages)
 
-; tabs
+                                        ; tabs
 (setq-default
  indent-tabs-mode nil
  truncate-lines t

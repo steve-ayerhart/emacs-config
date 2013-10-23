@@ -11,7 +11,9 @@
                                  "\\*Packages\\*")
 
  ibuffer-saved-filter-groups '(("default"
-                                ("rb" (mode . ruby-mode))
+                                ("rb"
+                                 (mode . ruby-mode)
+                                 (mode . inf-ruby))
                                 ("js" (or
                                        (mode . js2-mode)
                                        (mode . javascript-mode)))

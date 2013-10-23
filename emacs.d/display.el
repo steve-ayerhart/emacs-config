@@ -83,8 +83,7 @@ This function is intended to be used as a value of `ring-bell-function'."
     (setq mode-line-bell-cached-string mode-line-bell-string))
   (message mode-line-bell-propertized-string)
   (sit-for mode-line-bell-delay)
-  (message "")
-  )
+  (message ""))
 
 (setq ring-bell-function 'mode-line-bell)
 

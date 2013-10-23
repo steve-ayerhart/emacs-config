@@ -3,7 +3,7 @@
 
 (setq inhibit-startup-message t)
 
-(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
@@ -13,7 +13,7 @@
   (setq default-frame-alist '((cursor-type . (bar . 3))))
 
             ; always fullscreen
-  (set-frame-parameter nil 'fullscreen 'fullboth)
+;  (set-frame-parameter nil 'fullscreen 'fullboth)
   (set-frame-parameter (selected-frame) 'alpha '(95 70))
   (add-to-list 'default-frame-alist '(alpha 95 70))
 

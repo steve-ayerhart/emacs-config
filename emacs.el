@@ -24,6 +24,7 @@
                magit
                evil-surround evil-leader evil-numbers
                zenburn-theme
+               org-jira
                php-mode-improved php-completion
                shell-switcher
                Enhanced-Ruby-Mode inf-ruby ruby-end rinari

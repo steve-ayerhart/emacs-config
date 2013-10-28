@@ -21,12 +21,13 @@
  el-get-user-package-directory "~/.emacs.d/inits"
 
  my-packages '(evil
+               powerline
                magit
                evil-surround evil-leader evil-numbers
                zenburn-theme
                php-mode-improved php-completion
                shell-switcher
-               Enhanced-Ruby-Mode inf-ruby ruby-end rinari
+               ruby-mode inf-ruby ruby-end rinari
                buffer-stack
                ibuffer-vc
                js2-mode js-comint

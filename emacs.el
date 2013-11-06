@@ -28,7 +28,6 @@
                php-mode-improved php-completion
                shell-switcher
                ruby-mode inf-ruby ruby-end rinari
-               buffer-stack
                ibuffer-vc
                js2-mode js-comint
                apache-mode nginx-mode

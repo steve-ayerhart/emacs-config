@@ -2,6 +2,12 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (package-initialize)
 
+;; UTF-8 Encoding
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
@@ -23,6 +29,8 @@
  my-packages '(evil
                powerline
                magit
+               cmake-mode
+               qml-mode
                evil-surround evil-leader evil-numbers
                zenburn-theme
                php-mode-improved php-completion

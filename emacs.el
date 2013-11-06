@@ -89,3 +89,7 @@
    (sh . t)
    (python . t)
    (emacs-lisp . t)))
+
+; some global keybindings
+(global-set-key (kbd "M-ESC") 'jump-to-end)
+(global-set-key (kbd "<f1>") 'magit-status)

@@ -15,6 +15,12 @@
   (let ((inhibit-read-only t))
     (erase-buffer)))
 
+(defun jump-to-end ()
+  "Sets the cursor to the end-of-buffer and the beginning-of-line"
+  (interactive)
+  (end-of-buffer)
+  (end-of-line))
+
 
 ;; misc functions for quiting killing the minibuffer with esc
 (defun def-assoc (key alist default)

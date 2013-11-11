@@ -8,6 +8,10 @@
  ibuffer-never-show-predicates '("\\*Completions\\*"
                                  "\\*Tramp*"
                                  "\\*Compile-log*"
+                                 "\\*Ediff*"
+                                 "\\*buffer-selection\\*"
+                                 "\\*Buffer List\\*"
+                                 "\\*Help\\*"
                                  "\\*Packages\\*")
 
  ibuffer-saved-filter-groups '(("default"
@@ -19,7 +23,10 @@
                                        (mode . javascript-mode)))
                                 ("php" (mode . php-mode))
                                 ("elisp" (mode . emacs-lisp-mode))
-                                ("eshell" (name . "^\\*eshell"))
+                                ("shell" (or
+                                          (name . "^\\*eshell")
+                                          (name . "^\\*ansi-term*")))
+                                 
                                 ("magit" (name . "^\\*magit"))
                                 ("emacs" (or
                                           (name . "^\\*scratch\\*$")

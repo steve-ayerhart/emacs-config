@@ -1,4 +1,7 @@
 emacs-config
 ============
+My emacs config which heavily utilizes evil-mode
 
-my emacs config
+Screen Shot
+-----------
+![Screen Shot](http://erhart.io/imgs/emacs-ss.png)

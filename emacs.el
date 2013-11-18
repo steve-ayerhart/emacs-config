@@ -2,6 +2,12 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (package-initialize)
 
+;; UTF-8 Encoding
+(prefer-coding-system       'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
       (url-retrieve-synchronously
@@ -23,6 +29,8 @@
  my-packages '(evil
                powerline
                magit
+               cmake-mode
+               qml-mode
                evil-surround evil-leader evil-numbers
                zenburn-theme
                php-mode-improved php-completion
@@ -71,7 +79,7 @@
 (show-paren-mode 1)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(set-default 'tramp-default-proxies-alist (quote ((".*" "\\`root\\'" "/ssh:%h:"))))
+(set-default 'tramp-default-proxies-alist '("erhart\\.io" "root" "/ssh:erhart@erhart\\.io:"))
 
 (org-babel-do-load-languages
  'org-babel-load-languages

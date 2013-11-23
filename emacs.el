@@ -79,7 +79,6 @@
 (show-paren-mode 1)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(set-default 'tramp-default-proxies-alist '("erhart\\.io" "root" "/ssh:erhart@erhart\\.io:"))
 
 (org-babel-do-load-languages
  'org-babel-load-languages

@@ -32,7 +32,7 @@
                cmake-mode
                qml-mode
                evil-surround evil-leader evil-numbers
-               zenburn-theme
+;               zenburn-theme
                php-mode-improved php-completion
                shell-switcher
                ruby-mode inf-ruby ruby-end rinari
@@ -41,6 +41,7 @@
                apache-mode nginx-mode
                geiser
                yaml-mode haml-mode markdown-mode
+               color-theme-almost-monokai
                scss-mode css-mode)
  ;; backups
  backup-directory-alist `((".*" . ,temporary-file-directory))

@@ -28,6 +28,7 @@
 
  my-packages '(evil
                powerline
+               elixir-mode
                magit
                cmake-mode
                qml-mode
@@ -90,5 +91,8 @@
    (emacs-lisp . t)))
 
 ; some global keybindings
+
+(set-default 'tramp-default-proxies-alist (quote (("boner" nil "/ssh:bbb:"))))
+
 (global-set-key (kbd "M-ESC") 'jump-to-end)
 (global-set-key (kbd "<f1>") 'magit-status)

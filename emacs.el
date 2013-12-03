@@ -1,3 +1,4 @@
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (package-initialize)
@@ -7,6 +8,10 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
+
+(setq eshell-path-env  "/usr/local/bin:/usr/local/sbin:")
+(setq exec-path (cons "/usr/local/bin" exec-path))
+
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -28,11 +33,11 @@
 
  my-packages '(evil
                powerline
-               elixir-mode
                magit
                cmake-mode
                qml-mode
                evil-surround evil-leader evil-numbers
+               erlware-mode
 ;               zenburn-theme
                php-mode-improved php-completion
                shell-switcher

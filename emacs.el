@@ -35,7 +35,6 @@
                powerline
                magit
                cmake-mode
-               qml-mode
                evil-surround evil-leader evil-numbers
                erlware-mode
 ;               zenburn-theme

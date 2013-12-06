@@ -1,3 +1,4 @@
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (package-initialize)
@@ -7,6 +8,10 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
+
+(setq eshell-path-env  "/usr/local/bin:/usr/local/sbin:")
+(setq exec-path (cons "/usr/local/bin" exec-path))
+
 
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -31,6 +36,7 @@
                magit
                cmake-mode
                evil-surround evil-leader evil-numbers
+               erlware-mode
 ;               zenburn-theme
                php-mode-improved php-completion
                shell-switcher
@@ -89,5 +95,8 @@
    (emacs-lisp . t)))
 
 ; some global keybindings
+
+(set-default 'tramp-default-proxies-alist (quote (("boner" nil "/ssh:bbb:"))))
+
 (global-set-key (kbd "M-ESC") 'jump-to-end)
 (global-set-key (kbd "<f1>") 'magit-status)

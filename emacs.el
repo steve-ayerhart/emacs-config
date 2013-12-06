@@ -30,7 +30,6 @@
                powerline
                magit
                cmake-mode
-               qml-mode
                evil-surround evil-leader evil-numbers
 ;               zenburn-theme
                php-mode-improved php-completion

@@ -1,7 +1,7 @@
-
 (add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(package-initialize)
+
+(mapc 'require
+     '(cl my-packages my-defuns uniquify display tramp))
 
 ;; UTF-8 Encoding
 (prefer-coding-system       'utf-8)
@@ -9,45 +9,10 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-(setq eshell-path-env  "/usr/local/bin:/usr/local/sbin:")
-(setq exec-path (cons "/usr/local/bin" exec-path))
+(setq default-directory "~")
 
-
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously
-       "https://raw.github.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-
-;; load up some more various configs and modes
-(mapc 'require
-      '(cl my-defuns uniquify display))
-
-(add-to-list 'el-get-recipe-path "~/.emacs.d/recipes")
 
 (setq
- ;; el-get variables
- el-get-verbose t
- el-get-user-package-directory "~/.emacs.d/inits"
-
- my-packages '(evil
-               powerline
-               magit
-               cmake-mode
-               evil-surround evil-leader evil-numbers
-               erlware-mode
-;               zenburn-theme
-               php-mode-improved php-completion
-               shell-switcher
-               ruby-mode inf-ruby ruby-end rinari
-               ibuffer-vc
-               js2-mode js-comint
-               apache-mode nginx-mode
-               geiser
-               yaml-mode haml-mode markdown-mode
-               color-theme-almost-monokai
-               scss-mode css-mode)
  ;; backups
  backup-directory-alist `((".*" . ,temporary-file-directory))
  auto-save-file-name-transforms `((".*" ,temporary-file-directory))
@@ -63,7 +28,10 @@
 
  ;; tramp
  tramp-default-method "ssh"
+ tramp-shell-prompt-pattern "^.*[#$%>] *"
 
+tramp-debug-buffer t
+tramp-verbose 9
  inhibit-splash-screen t
 
  shell-prompt-pattern "^[^a-zA-Z].*[#$%>] *"
@@ -73,8 +41,6 @@
  ;; ediff should use the selected frame
  ediff-window-setup-function 'ediff-setup-windows-plain
  ediff-split-window-function 'split-window-horizontally)
-
-(el-get 'sync my-packages)
 
                                         ; tabs
 (setq-default

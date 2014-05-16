@@ -8,3 +8,4 @@ emacs.d/url
 emacs.d/auto-save-list
 /emacs.d/ac-comphist.dat
 /emacs.d/var
+/emacs.d/additional-packages.el

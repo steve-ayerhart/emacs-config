@@ -15,9 +15,9 @@
             ; always fullscreen
 
 ;  (setq ns-use-native-fullscreen nil)
-  (set-frame-parameter nil 'fullscreen 'fullboth)
-  (set-frame-parameter (selected-frame) 'alpha '(90 50))
-  (add-to-list 'default-frame-alist '(alpha 80 70))
+;  (set-frame-parameter nil 'fullscreen 'fullboth)
+;  (set-frame-parameter (selected-frame) 'alpha '(90 50))
+;  (add-to-list 'default-frame-alist '(alpha 80 70))
 
   (global-linum-mode 1)
   (blink-cursor-mode 0)

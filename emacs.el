@@ -1,7 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d")
 
 (mapc 'require
-     '(cl my-packages my-defuns uniquify display tramp))
+      '(cl my-packages my-defuns uniquify display tramp))
 
 ;; UTF-8 Encoding
 (prefer-coding-system       'utf-8)
@@ -30,8 +30,8 @@
  tramp-default-method "ssh"
  tramp-shell-prompt-pattern "^.*[#$%>] *"
 
-tramp-debug-buffer t
-tramp-verbose 9
+ tramp-debug-buffer t
+ tramp-verbose 9
  inhibit-splash-screen t
 
  shell-prompt-pattern "^[^a-zA-Z].*[#$%>] *"
@@ -42,7 +42,7 @@ tramp-verbose 9
  ediff-window-setup-function 'ediff-setup-windows-plain
  ediff-split-window-function 'split-window-horizontally)
 
-                                        ; tabs
+;; tabs
 (setq-default
  indent-tabs-mode nil
  truncate-lines t
@@ -60,7 +60,7 @@ tramp-verbose 9
    (python . t)
    (emacs-lisp . t)))
 
-; some global keybindings
+;; some global keybindings
 
 (set-default 'tramp-default-proxies-alist (quote (("boner" nil "/ssh:bbb:"))))
 

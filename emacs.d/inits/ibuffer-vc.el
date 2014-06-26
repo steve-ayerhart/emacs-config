@@ -15,4 +15,3 @@
                                  "\\*Buffer List\\*"
                                  "\\*Help\\*"
                                  "\\*Packages\\*"))
-

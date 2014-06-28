@@ -19,6 +19,7 @@
 ;  (set-frame-parameter (selected-frame) 'alpha '(90 50))
 ;  (add-to-list 'default-frame-alist '(alpha 80 70))
 
+  (setq ns-use-srgb-colorspace t)
   (global-linum-mode 1)
   (blink-cursor-mode 0)
   (when (fboundp 'global-hl-line-mode) (global-hl-line-mode t))

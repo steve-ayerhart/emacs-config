@@ -15,7 +15,7 @@
   "A list of packages to ensure are installed at launch.")
 
 (defvar additional-filename
-  "~/.emacs.d/additional-packages.el"
+  "~/.emacs.d/lisp/additional-packages.el"
   "A string indicating the name of the file to load the additional packages list")
 
 (defun my-packages-installed-p ()
@@ -38,7 +38,7 @@
       (package-install p))))
 
 (dolist (p my-packages)
-  (let ((file (format "~/.emacs.d/inits/%s.el" (symbol-name p))))
+  (let ((file (format "~/.emacs.d/lisp/inits/%s.el" (symbol-name p))))
     (when (file-exists-p file)
       (load-file file))))
 

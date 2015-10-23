@@ -4,14 +4,14 @@
 
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.org/packages/")))
 
 (package-refresh-contents)
 
 (setq url-http-attempt-keepalives nil)
 
 (defvar my-packages
-  '(evil magit)
+  '(shell-switcher ido-ubiquitous magit)
   "A list of packages to ensure are installed at launch.")
 
 (defvar additional-filename
@@ -42,4 +42,4 @@
     (when (file-exists-p file)
       (load-file file))))
 
-(provide 'my-packages)
+(provide 'packages)

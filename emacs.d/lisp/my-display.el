@@ -1,44 +1,17 @@
-(custom-set-faces
- '(default ((t (:family "Inconsolata" :foundry "nil" :slant normal :weight normal :height 140 :width normal)))))
-
-(setq inhibit-startup-message t)
-
-;(when (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
 (when window-system ;; Graphics mode
-
   (global-font-lock-mode t)
   (setq default-frame-alist '((cursor-type . (bar . 3))))
 
-            ; always fullscreen
-
 ;  (setq ns-use-native-fullscreen nil)
-;  (set-frame-parameter nil 'fullscreen 'fullboth)
+  (set-frame-parameter nil 'fullscreen 'fullboth)
 ;  (set-frame-parameter (selected-frame) 'alpha '(90 50))
 ;  (add-to-list 'default-frame-alist '(alpha 80 70))
 
   (setq ns-use-srgb-colorspace t)
-  (global-linum-mode 1)
   (blink-cursor-mode 0)
-  (when (fboundp 'global-hl-line-mode) (global-hl-line-mode t))
 
   (setq default-indicate-empty-lines t)
   (setq indicate-empty-lines t))
-
-
-(defvar my-linum-format-string "%4d")
-(add-hook 'linum-before-numbering-hook 'my-linum-get-format-string)
-(defun my-linum-get-format-string ()
-  (let* ((width (length (number-to-string
-                         (count-lines (point-min) (point-max)))))
-         (format (concat "%" (number-to-string width) "d")))
-    (setq my-linum-format-string format)))
-(setq linum-format 'my-linum-format)
-(defun my-linum-format (line-number)
-  (propertize (format my-linum-format-string line-number) 'face 'linum))
-
 
 ;; Mark certain keywords with warning faces
 (defun enable-warning-keyword-hiliting (modes)
@@ -90,4 +63,4 @@ This function is intended to be used as a value of `ring-bell-function'."
 
 (setq ring-bell-function 'mode-line-bell)
 
-(provide 'display)
+(provide 'my-display)

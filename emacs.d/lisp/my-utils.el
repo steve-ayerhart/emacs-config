@@ -29,4 +29,7 @@
   (end-of-buffer)
   (end-of-line))
 
-(provide 'my-defuns)
+;; package functions
+
+
+(provide 'my-utils)

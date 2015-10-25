@@ -29,7 +29,12 @@
   (end-of-buffer)
   (end-of-line))
 
-;; package functions
-
+(defun change-theme (theme)
+  "Disable all active themes and load THEME."
+  (interactive
+   (lexical-let ((themes (mapcar 'symbol-name (custom-available-themes))))
+     (list (intern (completing-read "Load custom theme: " themes)))))
+  (mapc 'disable-theme custom-enabled-themes)
+  (load-theme theme t))
 
 (provide 'my-utils)

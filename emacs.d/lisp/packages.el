@@ -11,7 +11,7 @@
 (setq url-http-attempt-keepalives nil)
 
 (defvar my-packages
-  '(shell-switcher ido-ubiquitous magit)
+  '(shell-switcher ido-ubiquitous magit evil)
   "A list of packages to ensure are installed at launch.")
 
 (defvar additional-filename

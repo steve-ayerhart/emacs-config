@@ -6,6 +6,8 @@ emacs.d/elpa
 emacs.d/tramp
 emacs.d/url
 emacs.d/auto-save-list
+emacs.d/session.*
 /emacs.d/ac-comphist.dat
 /emacs.d/var
 /emacs.d/lisp/additional-packages.el
+/emacs.d/ido.last
